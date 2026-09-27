@@ -30,7 +30,7 @@ const sessionPool = new Pool({
 function sessionMiddleware() {
   return session({
     store: new pgSession({ pool: sessionPool, schemaName: process.env.PLATFORM_SCHEMA || 'platform', tableName: 'session', createTableIfMissing: false }),
-    name: 'toolkitai.sid',
+    name: 'tkai_session',
     secret: process.env.SESSION_SECRET || 'dev-only-insecure-secret',
     resave: false,
     saveUninitialized: false,
